@@ -8,56 +8,82 @@
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
-        <!--        <Button-->
-        <!--            android:id="@+id/button1"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:text="Button1"-->
-        <!--            android:onClick="clickHandler"/>-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/btn_selector"
+            android:onClick="clickHandler"
+            android:stateListAnimator="@null"
+            android:text="이종석"
+            android:textColor="@color/text_selector" />
 
-        <!--        <Button-->
-        <!--            android:id="@+id/button2"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:text="이진우"-->
-        <!--            android:onClick="clickHandler"/>-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/btn_selector"
+            android:onClick="clickHandler"
+            android:stateListAnimator="@null"
+            android:text="박종훈"
+            android:textColor="@color/text_selector" />
 
-        <!--        <Button-->
-        <!--            android:id="@+id/button3"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:text="박종훈"-->
-        <!--            />-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/btn_selector"
+            android:onClick="clickHandler"
+            android:stateListAnimator="@null"
+            android:text="이진우"
+            android:textColor="@color/text_selector" />
 
-        <!--        <Button-->
-        <!--            android:id="@+id/button4"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:text="이종석" />-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/btn_selector"
+            android:onClick="clickHandler"
+            android:stateListAnimator="@null"
+            android:text="최도원"
+            android:textColor="@color/text_selector" />
 
-        <!--        <Button-->
-        <!--            android:id="@+id/button5"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:text="최도원" />-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/btn_selector"
+            android:onClick="clickHandler"
+            android:stateListAnimator="@null"
+            android:text="골무짱"
+            android:textColor="@color/text_selector" />
 
-        <!--        <Button-->
-        <!--            android:id="@+id/button6"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:text="최도원2" />-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/btn_selector"
+            android:onClick="clickHandler"
+            android:stateListAnimator="@null"
+            android:text="이슬비"
+            android:textColor="@color/text_selector" />
 
-        <!--        <Button-->
-        <!--            android:id="@+id/button7"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:text="최도원3" />-->
-
-        <!--        <Button-->
-        <!--            android:id="@+id/button8"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:text="최도원4" />-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/btn_selector"
+            android:onClick="clickHandler"
+            android:stateListAnimator="@null"
+            android:text="헤으응"
+            android:textColor="@color/text_selector" />
 
     </LinearLayout>
 

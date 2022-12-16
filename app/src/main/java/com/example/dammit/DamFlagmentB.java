@@ -22,21 +22,21 @@ public class DamFlagmentB extends Fragment {
         View view = inflater.inflate(R.layout.flagment_b_dam, container, false);
 
 
-        img(view);
+//        img(view);
 
 
         return view;
     }
 
-    public void img(View view) {
-
-        ImageView sadImg;
-
-        sadImg = view.findViewById(R.id.sad_image);
-        DrawableImageViewTarget gifImage = new DrawableImageViewTarget(sadImg);
-        Glide.with(this).load(R.raw.sad_face).into(sadImg);
-
-    }
+//    public void img(View view) {
+//
+//        ImageView sadImg;
+//
+//        sadImg = view.findViewById(R.id.sad_image);
+//        DrawableImageViewTarget gifImage = new DrawableImageViewTarget(sadImg);
+//        Glide.with(this).load(R.raw.sad_face).into(sadImg);
+//
+//    }
 
 }
 
