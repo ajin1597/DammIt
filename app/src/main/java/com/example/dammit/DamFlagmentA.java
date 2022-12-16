@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,7 +40,9 @@ public class DamFlagmentA extends Fragment {
     ImageView smailImg;
     ImageView nomalImg;
     ImageView sadImg;
-    ImageView lightImg;
+    ImageView sunImg;
+    ImageView cloudImg;
+    ImageView moonImg;
     ImageView workImg;
 
 
@@ -67,8 +70,8 @@ public class DamFlagmentA extends Fragment {
         TextView textWTLV = view.findViewById(R.id.textWaterLV);
         TextView textLight = view.findViewById(R.id.lightSensorText);
         TextView textWork = view.findViewById(R.id.workSersorText);
-//        TextView textWarning = view.findViewById(R.id.warningText);
-
+        TextView textSys1 = view.findViewById(R.id.systemText1);
+        TextView textSys2 = view.findViewById(R.id.systemText2);
 
 
 //        TextView waterT = view.findViewById(R.id.LVtext);
@@ -84,7 +87,7 @@ public class DamFlagmentA extends Fragment {
                     Gson gson = new Gson();
 
 
-
+                    // API 0번째(1번째 댐) Json 데이터
                     JSONObject item = (JSONObject) dataArray.get(1);
                     ResponseData gsonObj = gson.fromJson(item.toString(), ResponseData.class);
                     waterLv = gsonObj.getWaterLevel();
@@ -92,7 +95,6 @@ public class DamFlagmentA extends Fragment {
                     workNum = gsonObj.getWorkNmpr();
                     upTime = gsonObj.getUpdtDt();
                     damName = gsonObj.getDamName();
-
 
 
                     textDN.setText(damName);
@@ -103,7 +105,7 @@ public class DamFlagmentA extends Fragment {
 
                     String timeStr = upTime;
                     String hourStr = timeStr.substring(11, 13);
-                    System.out.println(hourStr);
+//                    System.out.println(hourStr);
 
                     // 00 ~ 11시 까지 AM || 12 ~ 23시 까지 PM
                     if (Integer.parseInt(hourStr) < 12) {
@@ -112,6 +114,25 @@ public class DamFlagmentA extends Fragment {
                         textUT.setText(upTime + " PM");
                     }
 
+                    // 06 ~ 18시 까지 sun이미지 || 19 ~ 05시 까지 moon이미지
+                    if (Integer.parseInt(hourStr) >= 6 && 18 >= Integer.parseInt(hourStr)) {
+                        sunImg = view.findViewById(R.id.lightSensorImg);
+                        DrawableImageViewTarget Image1 = new DrawableImageViewTarget(sunImg);
+                        Glide.with(getActivity()).load(R.raw.sun).into(sunImg);
+
+                        // 06 ~ 18시 사이에 조도센서 수치가 높으면 구름이미지로 변경
+                        if (Integer.parseInt(light) >= 100) {
+                            cloudImg = view.findViewById(R.id.lightSensorImg);
+                            DrawableImageViewTarget Image2 = new DrawableImageViewTarget(cloudImg);
+                            Glide.with(getActivity()).load(R.raw.cloud).into(cloudImg);
+                        }
+                    } else {
+                        moonImg = view.findViewById(R.id.lightSensorImg);
+                        DrawableImageViewTarget Image2 = new DrawableImageViewTarget(moonImg);
+                        Glide.with(getActivity()).load(R.raw.moon).into(moonImg);
+                    }
+
+
                     // 댐 수위에 맞는 경고 문구 및 이미지
                     if (Integer.parseInt(waterLv) > 950) {
                         //위험
@@ -119,24 +140,28 @@ public class DamFlagmentA extends Fragment {
                         DrawableImageViewTarget Image1 = new DrawableImageViewTarget(sadImg);
                         Glide.with(getActivity()).load(R.raw.sad_face).into(sadImg);
 
-//                        textWarning.setText("댐 수위 위험 수치 도달!");
+                        textSys1.setText("System : 댐 수위 위험 수치 도달!");
+                        textSys2.setText("System : 근무인원들은 상황 조치 및 대피준비!");
                     } else if (949 > Integer.parseInt(waterLv) && Integer.parseInt(waterLv) > 850) {
                         //경고
                         nomalImg = view.findViewById(R.id.select_face_img);
                         DrawableImageViewTarget Image1 = new DrawableImageViewTarget(nomalImg);
                         Glide.with(getActivity()).load(R.raw.nomal_face).into(nomalImg);
 
-//                        textWarning.setText("댐 수위 경고 수치 도달!");
+                        textSys1.setText("System : 댐 수위 경고 수치 도달!");
+                        textSys2.setText("System : 근무인원들은 예외 상황 준비");
                     } else {
                         //안전
                         smailImg = view.findViewById(R.id.select_face_img);
                         DrawableImageViewTarget Image1 = new DrawableImageViewTarget(smailImg);
                         Glide.with(getActivity()).load(R.raw.smail_face).into(smailImg);
 
-//                        textWarning.setText("댐 수위 평균 수치 유지중!");
+                        textSys1.setText("System : 댐 수위 평균 수치 유지중!");
+                        textSys2.setText("System : `-");
                     }
 //★★★★★★★★★★★★★★★★★★★★★★★★★이미지 맞게 넣으세요
 //                    0 ~ 1000 950위험, 850경고
+                    // 빛이 80미만 없으면 100 이상
 
                 } catch (Exception e) {
                     System.out.println(e);
@@ -166,14 +191,13 @@ public class DamFlagmentA extends Fragment {
 //        DrawableImageViewTarget Image1 = new DrawableImageViewTarget(smailImg);
 //        Glide.with(this).load(R.raw.smail_face).into(smailImg);
 
-        lightImg = view.findViewById(R.id.lightSensorImg);
-        DrawableImageViewTarget Image2 = new DrawableImageViewTarget(lightImg);
-        Glide.with(this).load(R.raw.flash).into(lightImg);
+//        lightImg = view.findViewById(R.id.lightSensorImg);
+//        DrawableImageViewTarget Image2 = new DrawableImageViewTarget(lightImg);
+//        Glide.with(this).load(R.raw.flash).into(lightImg);
 
         workImg = view.findViewById(R.id.workSensorImg);
         DrawableImageViewTarget Image3 = new DrawableImageViewTarget(workImg);
         Glide.with(this).load(R.raw.worker).into(workImg);
-
 
 
     }
