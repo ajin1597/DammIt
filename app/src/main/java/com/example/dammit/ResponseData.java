@@ -5,6 +5,7 @@ public class ResponseData {
     private String light;
     private String workNmpr;
     private String updtDt;
+    private String damName;
 
     public String getDamName() {
         return damName;
@@ -13,8 +14,6 @@ public class ResponseData {
     public void setDamName(String damName) {
         this.damName = damName;
     }
-
-    private String damName;
 
     public String getWaterLevel() {
         return waterLevel;
