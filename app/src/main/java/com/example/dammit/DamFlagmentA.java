@@ -14,21 +14,13 @@ import com.android.volley.toolbox.Volley;
 
 public class DamFlagmentA extends Fragment {
 
-    public static RequestQueue rq = null;
+    JsonReader jsonReader;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.flagment_a_dam, container, false);
-
-        if (rq == null) {
-            rq = Volley.newRequestQueue(getContext());
-        }
-
-        int fragNum = 3;
-
-        JsonReader jsonReader;
-//        img(view);
+        int fragNum = 0;
         JsonReader.makeRequest(view, fragNum);
 
         return view;

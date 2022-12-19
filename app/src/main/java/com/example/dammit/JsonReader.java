@@ -1,26 +1,24 @@
 package com.example.dammit;
 
-import static com.example.dammit.DamFlagmentA.rq;
-//import static com.example.dammit.DamFlagmentB.rq;
-
+import static com.example.dammit.MainActivity.rq;
 
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.DrawableImageViewTarget;
-import com.android.volley.Request;
 
+import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+
+import com.google.gson.Gson;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -41,6 +39,7 @@ public class JsonReader {
     static ImageView moonImg;
     static ImageView workImg;
 
+
     public static void makeRequest(View view, int fragNum) {
 
         Log.i("Dammit", String.valueOf(fragNum));
@@ -51,19 +50,15 @@ public class JsonReader {
         TextView textWTLV = view.findViewById(R.id.textWaterLV);
         TextView textLight = view.findViewById(R.id.lightSensorText);
         TextView textWork = view.findViewById(R.id.workSersorText);
-        TextView textSys1 = view.findViewById(R.id.systemText1);
-        TextView textSys2 = view.findViewById(R.id.systemText2);
+//        TextView textSys1 = view.findViewById(R.id.systemText1);
+//        TextView textSys2 = view.findViewById(R.id.systemText2);
 
-
-//        TextView waterT = view.findViewById(R.id.LVtext);
         ResponseData responseData;
 
         Timer timer = new Timer();
         TimerTask timerTask = new TimerTask() {
             @Override
             public void run() {
-
-
                 StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -73,9 +68,9 @@ public class JsonReader {
                             JSONArray dataArray = jsonObject.getJSONArray("dam");
                             Gson gson = new Gson();
 
-
-                            // API 0번째(1번째 댐) Json 데이터
+                            // API fragNum(int)번째 Json 데이터
                             JSONObject item = (JSONObject) dataArray.get(fragNum);
+
                             ResponseData gsonObj = gson.fromJson(item.toString(), ResponseData.class);
                             waterLv = gsonObj.getWaterLevel();
                             light = gsonObj.getLight();
@@ -89,14 +84,52 @@ public class JsonReader {
                             textWork.setText(workNum + "명 근무중");
 
                             String timeStr = upTime;
+                            System.out.println(timeStr);
                             String hourStr = timeStr.substring(11, 13);
-//                    System.out.println(hourStr);
+                            String changeStr = null;
+
+                            // 시간 변환 switch문 Ex) 13시 -> 01
+                            switch(hourStr) {
+                                case "13" :
+                                    changeStr = timeStr.replace(" 13:" , " 01:");
+                                    break;
+                                case "14" :
+                                    changeStr = timeStr.replace(" 14:" , " 02:");
+                                    break;
+                                case "15" :
+                                    changeStr = timeStr.replace(" 15:" , " 03:");
+                                    break;
+                                case "16" :
+                                    changeStr = timeStr.replace(" 16:" , " 04:");
+                                    break;
+                                case "17" :
+                                    changeStr = timeStr.replace(" 17:" , " 05:");
+                                    break;
+                                case "18" :
+                                    changeStr = timeStr.replace(" 18:" , " 06:");
+                                    break;
+                                case "19" :
+                                    changeStr = timeStr.replace(" 19:" , " 07:");
+                                    break;
+                                case "20" :
+                                    changeStr = timeStr.replace(" 20:" , " 08:");
+                                    break;
+                                case "21" :
+                                    changeStr = timeStr.replace(" 21:" , " 09:");
+                                    break;
+                                case "22" :
+                                    changeStr = timeStr.replace(" 22:" , " 10:");
+                                    break;
+                                case "23" :
+                                    changeStr = timeStr.replace(" 23:" , " 11:");
+                                    break;
+                            }
 
                             // 00 ~ 11시 까지 AM || 12 ~ 23시 까지 PM
                             if (Integer.parseInt(hourStr) < 12) {
-                                textUT.setText(upTime + " AM");
+                                textUT.setText(changeStr + " AM");
                             } else {
-                                textUT.setText(upTime + " PM");
+                                textUT.setText(changeStr + " PM");
                             }
 
                             // 06 ~ 18시 까지 sun이미지 || 19 ~ 05시 까지 moon이미지
@@ -117,7 +150,6 @@ public class JsonReader {
                                 Glide.with(view).load(R.raw.moon).into(moonImg);
                             }
 
-
                             // 댐 수위에 맞는 경고 문구 및 이미지
                             if (Integer.parseInt(waterLv) > 950) {
                                 //위험
@@ -125,24 +157,24 @@ public class JsonReader {
                                 DrawableImageViewTarget Image1 = new DrawableImageViewTarget(sadImg);
                                 Glide.with(view).load(R.raw.sad_face).into(sadImg);
 
-                                textSys1.setText("System : 댐 수위 위험 수치 도달!");
-                                textSys2.setText("System : 근무인원들은 상황 조치 및 대피준비!");
+//                                textSys1.setText("System : 댐 수위 위험 수치 도달!");
+//                                textSys2.setText("System : 근무인원들은 상황 조치 및 대피준비!");
                             } else if (949 > Integer.parseInt(waterLv) && Integer.parseInt(waterLv) > 850) {
                                 //경고
                                 nomalImg = view.findViewById(R.id.select_face_img);
                                 DrawableImageViewTarget Image1 = new DrawableImageViewTarget(nomalImg);
                                 Glide.with(view).load(R.raw.nomal_face).into(nomalImg);
 
-                                textSys1.setText("System : 댐 수위 경고 수치 도달!");
-                                textSys2.setText("System : 근무인원들은 예외 상황 준비");
+//                                textSys1.setText("System : 댐 수위 경고 수치 도달!");
+//                                textSys2.setText("System : 근무인원들은 예외 상황 준비");
                             } else {
                                 //안전
                                 smailImg = view.findViewById(R.id.select_face_img);
                                 DrawableImageViewTarget Image1 = new DrawableImageViewTarget(smailImg);
                                 Glide.with(view).load(R.raw.smail_face).into(smailImg);
 
-                                textSys1.setText("System : 댐 수위 평균 수치 유지중!");
-                                textSys2.setText("System : `-");
+//                                textSys1.setText("System : 댐 수위 평균 수치 유지중!");
+//                                textSys2.setText("System : `-");
                             }
 
                             workImg = view.findViewById(R.id.workSensorImg);
@@ -172,7 +204,7 @@ public class JsonReader {
                 System.out.println("이진우이진우이진우이진우이진우이진우이진우이진우이진우이진우이진우이진우이진우");
             }
         };
-        timer.schedule(timerTask, 0, 5 * 1000); //Timer 실행
-
+        // 5초마다 timer 실행
+        timer.schedule(timerTask, 0, 5 * 1000);
     }
 }

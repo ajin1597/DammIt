@@ -3,7 +3,7 @@
     <item>
         <shape  android:shape="rectangle">
             <!--            Button Shadow Color -->
-            <solid android:color="#FAAB78" />
+            <solid android:color="#406BCE" />
             <corners android:radius="7dp" />
         </shape>
     </item>

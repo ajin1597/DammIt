@@ -5,39 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:weightSum="20"
     tools:context=".MainActivity">
-
-    <!--    <View-->
-    <!--        android:id="@+id/view1"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="648dp" >-->
-    <!--    </View>-->
-
 
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="10"
+        android:layout_weight="19.5"
         app:layout_constraintBottom_toTopOf="@id/HorizontalScrollView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
     </FrameLayout>
-
-
-    <!--    <ImageView-->
-    <!--        android:id="@+id/sad_image"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="650dp" />-->
 
     <HorizontalScrollView
         android:id="@+id/HorizontalScrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:background="#DAE2B6"
+        android:layout_weight="0.5"
+        android:background="#79DAE8"
         android:scrollbars="none">
 
         <LinearLayout
@@ -48,7 +37,6 @@
             <include layout="@layout/click_view" />
         </LinearLayout>
     </HorizontalScrollView>
-
 
 </LinearLayout>
 
