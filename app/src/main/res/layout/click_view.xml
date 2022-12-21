@@ -12,81 +12,58 @@
             android:id="@+id/button1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="10dp"
             android:background="@drawable/btn_selector"
-            android:onClick="clickHandler"
+            android:fontFamily="@font/cookie_run_regular"
+            android:padding="20dp"
             android:stateListAnimator="@null"
-            android:text="이종석"
+            android:text="이종석 악마"
             android:textColor="@color/text_selector"
-            android:textSize="20dp"
-            android:layout_gravity="center"
-            android:fontFamily="@font/cookie_run_regular"/>
+            android:textSize="20dp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="10dp"
             android:background="@drawable/btn_selector"
-            android:onClick="clickHandler"
+            android:fontFamily="@font/cookie_run_regular"
+            android:padding="20dp"
             android:stateListAnimator="@null"
-            android:text="박종훈"
-            android:textColor="@color/text_selector" />
+            android:text="이종석"
+            android:textColor="@color/text_selector"
+            android:textSize="20dp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="10dp"
             android:background="@drawable/btn_selector"
-            android:onClick="clickHandler"
+            android:fontFamily="@font/cookie_run_regular"
+            android:padding="20dp"
             android:stateListAnimator="@null"
-            android:text="이진우"
-            android:textColor="@color/text_selector" />
+            android:text="이종석 엉덩이"
+            android:textColor="@color/text_selector"
+            android:textSize="20dp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="10dp"
             android:background="@drawable/btn_selector"
-            android:onClick="clickHandler"
+            android:fontFamily="@font/cookie_run_regular"
+            android:padding="20dp"
             android:stateListAnimator="@null"
-            android:text="최도원"
-            android:textColor="@color/text_selector" />
+            android:text="이종석 응가응가"
+            android:textColor="@color/text_selector"
+            android:textSize="20dp" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/btn_selector"
-            android:onClick="clickHandler"
-            android:stateListAnimator="@null"
-            android:text="골무짱"
-            android:textColor="@color/text_selector" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/btn_selector"
-            android:onClick="clickHandler"
-            android:stateListAnimator="@null"
-            android:text="이슬비"
-            android:textColor="@color/text_selector" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/btn_selector"
-            android:onClick="clickHandler"
-            android:stateListAnimator="@null"
-            android:text="헤으응"
-            android:textColor="@color/text_selector" />
 
     </LinearLayout>
 

@@ -1,6 +1,7 @@
 package com.example.dammit;
 
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.util.Util;
 
 public class MainActivity extends AppCompatActivity {
     //implements View.OnClickListener
@@ -18,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     private FragmentTransaction fragmentTransaction;
     private DamFlagmentA damFlagmentA;
     private DamFlagmentB damFlagmentB;
+
+    private long mLastClickTime = 0;
 
     private final int Fragment_1 = 1;
     private final int Fragment_2 = 2;
@@ -34,12 +38,29 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.button1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+//                Utils.prevent
+
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000) {
+                    return;
+                }
+                mLastClickTime = SystemClock.elapsedRealtime();
+
                 FragmentView(Fragment_1);
             }
+
+
         });
         findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000) {
+                    return;
+                }
+                mLastClickTime = SystemClock.elapsedRealtime();
+
                 FragmentView(Fragment_2);
             }
         });

@@ -2,9 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CCD6A6"
+    android:background="@drawable/background_gradient"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -12,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="none">
-        <!--        전체엉덩이-->
+        <!--전체엉덩이-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -22,19 +23,17 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:background="@color/purple_200"
                 android:orientation="vertical"
                 android:paddingTop="70dp">
-
 
                 <TextView
                     android:id="@+id/textDamName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:background="#FFA7A7"
-                    android:textColor="@color/black"
-                    android:textSize="40dp"
+                    android:fontFamily="@font/cookie_run_bold"
+                    android:textColor="@color/white"
+                    android:textSize="43dp"
                     android:textStyle="bold"></TextView>
 
                 <TextView
@@ -42,19 +41,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="15dp"
-                    android:background="#FFA7A7"
-                    android:textColor="@color/black"
-                    android:textSize="28dp"
-                    android:textStyle="bold"></TextView>
-
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/cookie_run_regular"
+                    android:textColor="#FBF4F9"
+                    android:textSize="22dp"></TextView>
 
             </LinearLayout>
             <!--이종석 수위-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="350dp"
-                android:background="@color/teal_200"
                 android:orientation="vertical">
 
                 <ImageView
@@ -62,87 +58,103 @@
                     android:layout_width="match_parent"
                     android:layout_height="130dp"
                     android:layout_gravity="center"
-                    android:layout_margin="20dp"
-                    android:background="@color/white" />
+                    android:layout_margin="20dp" />
 
                 <TextView
+                    android:id="@+id/riskLevel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="#FFA7A7"
-                    android:text="Water LV."
+                    android:fontFamily="@font/cookie_run_regular"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="15pt"></TextView>
+                    android:textColor="#FFFFFF"
+                    android:textSize="30dp"></TextView>
 
                 <TextView
                     android:id="@+id/textWaterLV"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:background="#FAED7D"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/cookie_run_regular"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="25dp"></TextView>
+                    android:textColor="#FFFACD"
+                    android:textSize="22dp"></TextView>
+
+                <TextView
+                    android:id="@+id/waterWarningText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/cookie_run_regular"
+                    android:textAlignment="center"
+                    android:textColor="#FAF2F2"
+                    android:textSize="22dp"></TextView>
 
             </LinearLayout>
 
             <!--이종석 조도-->
-
-            <!--이종석명-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="350dp"
-                android:background="@color/white"
+                android:layout_height="300dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/lightSensorImg"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"></ImageView>
+                    android:layout_height="130dp"
+                    android:layout_marginTop="20dp"></ImageView>
+
+                <TextView
+                    android:id="@+id/lightWarningText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/cookie_run_regular"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30dp"></TextView>
 
                 <TextView
                     android:id="@+id/lightSensorText"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:background="#FFA7A7"
-                    android:paddingTop="20dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/cookie_run_regular"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="15pt"></TextView>
+                    android:textColor="#FFBED5"
+                    android:textSize="25dp"></TextView>
+
 
             </LinearLayout>
 
+            <!--이종석명-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="350dp"
-                android:background="@color/teal_200"
+                android:layout_height="250dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/workSensorImg"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"></ImageView>
+                    android:layout_height="130dp"
+                    android:layout_marginTop="20dp"></ImageView>
 
                 <TextView
                     android:id="@+id/workSersorText"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:paddingTop="20dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cookie_run_regular"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="15pt"></TextView>
-
+                    android:textColor="@color/white"
+                    android:layout_marginTop="20dp"
+                    android:textSize="30dp"></TextView>
 
             </LinearLayout>
-        </LinearLayout>
 
+        </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
 

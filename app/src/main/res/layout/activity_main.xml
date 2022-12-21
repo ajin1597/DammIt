@@ -11,8 +11,8 @@
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="19.5"
+        android:layout_height="0dp"
+        android:layout_weight="18"
         app:layout_constraintBottom_toTopOf="@id/HorizontalScrollView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -24,9 +24,9 @@
     <HorizontalScrollView
         android:id="@+id/HorizontalScrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5"
-        android:background="#79DAE8"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="#8A5DDC"
         android:scrollbars="none">
 
         <LinearLayout
