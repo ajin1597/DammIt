@@ -13,13 +13,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="none">
-        <!--전체엉덩이-->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <!--엉덩이 타이틀-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
@@ -47,7 +46,7 @@
                     android:textSize="22dp"></TextView>
 
             </LinearLayout>
-            <!--이종석 수위-->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="350dp"
@@ -93,7 +92,6 @@
 
             </LinearLayout>
 
-            <!--이종석 조도-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
@@ -130,7 +128,6 @@
 
             </LinearLayout>
 
-            <!--이종석명-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
@@ -146,10 +143,10 @@
                     android:id="@+id/workSersorText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
                     android:fontFamily="@font/cookie_run_regular"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:layout_marginTop="20dp"
                     android:textSize="30dp"></TextView>
 
             </LinearLayout>

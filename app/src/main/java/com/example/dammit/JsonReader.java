@@ -29,7 +29,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class JsonReader {
-//    boolean 이진우왔다감 = true;
+    //    boolean 이진우왔다감 = true;
     public static String waterLv = null;
     public static String light = null;
     public static String workNum = null;
@@ -90,48 +90,49 @@ public class JsonReader {
 
                             DecimalFormat df = new DecimalFormat("0.0");
                             String waterLvStr = waterLv;
-                            String resultWaterLV = df.format( Double.parseDouble(waterLvStr) / 10.0);
+                            String resultWaterLV = df.format(Double.parseDouble(waterLvStr) / 10.0);
                             Log.e("Dammit", resultWaterLV);
-                            textWTLV.setText( "현재 수위는 " + resultWaterLV + "% 입니다.");
+                            textWTLV.setText("현재 수위는 " + resultWaterLV + "% 입니다.");
 
+                            // JSON데이서에서 시간값 String으로 형변환
                             String timeStr = upTime;
                             String hourStr = timeStr.substring(11, 13);
 
                             // 시간 변환 switch문 Ex) 13시 -> 01
                             String changeStr = null;
-                            switch(hourStr) {
-                                case "13" :
-                                    changeStr = timeStr.replace(" 13:" , " 01:");
+                            switch (hourStr) {
+                                case "13":
+                                    changeStr = timeStr.replace(" 13:", " 01:");
                                     break;
-                                case "14" :
-                                    changeStr = timeStr.replace(" 14:" , " 02:");
+                                case "14":
+                                    changeStr = timeStr.replace(" 14:", " 02:");
                                     break;
-                                case "15" :
-                                    changeStr = timeStr.replace(" 15:" , " 03:");
+                                case "15":
+                                    changeStr = timeStr.replace(" 15:", " 03:");
                                     break;
-                                case "16" :
-                                    changeStr = timeStr.replace(" 16:" , " 04:");
+                                case "16":
+                                    changeStr = timeStr.replace(" 16:", " 04:");
                                     break;
-                                case "17" :
-                                    changeStr = timeStr.replace(" 17:" , " 05:");
+                                case "17":
+                                    changeStr = timeStr.replace(" 17:", " 05:");
                                     break;
-                                case "18" :
-                                    changeStr = timeStr.replace(" 18:" , " 06:");
+                                case "18":
+                                    changeStr = timeStr.replace(" 18:", " 06:");
                                     break;
-                                case "19" :
-                                    changeStr = timeStr.replace(" 19:" , " 07:");
+                                case "19":
+                                    changeStr = timeStr.replace(" 19:", " 07:");
                                     break;
-                                case "20" :
-                                    changeStr = timeStr.replace(" 20:" , " 08:");
+                                case "20":
+                                    changeStr = timeStr.replace(" 20:", " 08:");
                                     break;
-                                case "21" :
-                                    changeStr = timeStr.replace(" 21:" , " 09:");
+                                case "21":
+                                    changeStr = timeStr.replace(" 21:", " 09:");
                                     break;
-                                case "22" :
-                                    changeStr = timeStr.replace(" 22:" , " 10:");
+                                case "22":
+                                    changeStr = timeStr.replace(" 22:", " 10:");
                                     break;
-                                case "23" :
-                                    changeStr = timeStr.replace(" 23:" , " 11:");
+                                case "23":
+                                    changeStr = timeStr.replace(" 23:", " 11:");
                                     break;
                             }
 
@@ -161,7 +162,7 @@ public class JsonReader {
                                 if (Integer.parseInt(light) >= 100) {
                                     cloudImg = view.findViewById(R.id.lightSensorImg);
                                     DrawableImageViewTarget Image2 = new DrawableImageViewTarget(cloudImg);
-                                    Glide.with(view).load((Drawable)null).fallback(R.drawable.cloudy).into(cloudImg);
+                                    Glide.with(view).load((Drawable) null).fallback(R.drawable.cloudy).into(cloudImg);
 
                                     lightMsgText.setText("흐림");
                                 }
@@ -218,13 +219,13 @@ public class JsonReader {
                         textUT.setText("에러: " + error.toString());
                     }
                 });
+
                 try {
                     rq.add(stringRequest);
                 } catch (Exception e) {
-                    System.out.println(e + "112312331321");
+                    Log.e("Dammit", String.valueOf(e));
                 }
 
-                System.out.println("이진우이진우이진우이진우이진우이진우이진우이진우이진우이진우이진우이진우이진우");
             }
         };
         // 5초마다 timer 실행

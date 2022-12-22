@@ -18,7 +18,7 @@
             android:fontFamily="@font/cookie_run_regular"
             android:padding="20dp"
             android:stateListAnimator="@null"
-            android:text="이종석 악마"
+            android:text="DAM1001"
             android:textColor="@color/text_selector"
             android:textSize="20dp" />
 
@@ -32,7 +32,7 @@
             android:fontFamily="@font/cookie_run_regular"
             android:padding="20dp"
             android:stateListAnimator="@null"
-            android:text="이종석"
+            android:text="DAM1002"
             android:textColor="@color/text_selector"
             android:textSize="20dp" />
 
@@ -46,7 +46,7 @@
             android:fontFamily="@font/cookie_run_regular"
             android:padding="20dp"
             android:stateListAnimator="@null"
-            android:text="이종석 엉덩이"
+            android:text="DAM1003"
             android:textColor="@color/text_selector"
             android:textSize="20dp" />
 
@@ -60,7 +60,7 @@
             android:fontFamily="@font/cookie_run_regular"
             android:padding="20dp"
             android:stateListAnimator="@null"
-            android:text="이종석 응가응가"
+            android:text="DAM1004"
             android:textColor="@color/text_selector"
             android:textSize="20dp" />
 

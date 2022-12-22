@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 
+// Fragment 첫번째
 public class DamFlagmentA extends Fragment {
 
     JsonReader jsonReader;
@@ -21,6 +22,8 @@ public class DamFlagmentA extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.flagment_a_dam, container, false);
         int fragNum = 0;
+
+        // JsonReader 클래스의 makeRequest매서드에 view와 json 데이터의 0번째 데이터를 불러오기 위한 index번호를 매게변수로 전송
         JsonReader.makeRequest(view, fragNum);
 
         return view;
